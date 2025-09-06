@@ -1,0 +1,6 @@
+# User can choose logging destination with enviromental variable via export LOG_FILE="/destination"
+LOG_FILE = os.getenv("LOG_FILE") or "message_log.txt"
+
+# Ensure the directory exists if LOG_FILE has a path
+if os.path.dirname(LOG_FILE):
+    os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
